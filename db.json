@@ -1,0 +1,12 @@
+{
+  "books": [],
+  "bookStores": [],
+  "bookPublishers": [],
+  "transactions": [
+    {
+      "id": 3,
+      "transDate": "2020-01-01",
+      "bookPrice": "600"
+    }
+  ]
+}
