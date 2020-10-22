@@ -20,6 +20,9 @@ const addBookPublishers = require('./route/bookPublishers/addBookPublishers')
 const editBookPublishers = require('./route/bookPublishers/editBookPublishers')
 const delBookPublishers = require('./route/bookPublishers/delBookPublishers')
 
+const register = require('./register')
+const login = require('./login')
+
 const app = express()
 app.use(bodyParser.json())
 
@@ -42,6 +45,9 @@ app.use(getBookPublishers)
 app.use(addBookPublishers)
 app.use(editBookPublishers)
 app.use(delBookPublishers)
+
+app.use(register)
+app.use(login)
 
 
 const port = 3000

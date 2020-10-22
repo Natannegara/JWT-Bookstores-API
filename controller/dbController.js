@@ -4,6 +4,7 @@ const booksModel = require('../model/books')
 const bookPublishersModel = require('../model/bookPublishers')
 const booksStoresModel = require('../model/bookStores')
 const transactionModel = require('../model/transactions')
+const usersModel = require('../model/user')
 
 let db;
 (async () => {
@@ -24,6 +25,7 @@ let db;
             bookStores: [],
             bookPublishers: [],
             transactions: [],
+            users: []
         })
             .write()
     } catch (error) {
@@ -54,12 +56,11 @@ function validator(body, model) {
  * @param {String} tableName table name
  * @returns {Object} data
  */
-function get(tableName, id) {
-    const parsedId = parseInt(id)
-    if (parsedId) {
+function get(tableName, query) {
+    if (query) {
         return db
             .get(tableName)
-            .find({ id: parsedId })
+            .find(query)
             .value()
     } else {
         return db
@@ -86,6 +87,9 @@ function add(tableName, body) {
     }
     if (tableName == 'transactions') {
         parsedBody = validator(body, transactionModel)
+    }
+    if (tableName == 'users') {
+        parsedBody = validator(body, usersModel)
     }
     if (!parsedBody) {
         return false

@@ -8,5 +8,11 @@
       "transDate": "2020-01-01",
       "bookPrice": "600"
     }
+  ],
+  "users": [
+    {
+      "username": "test",
+      "password": "test"
+    }
   ]
 }
