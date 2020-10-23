@@ -1,9 +1,9 @@
 const express = require('express')
 const app = express.Router()
 const db = require('../../controller/dbController')
-const accessData = require('../../middleWare/authentication')
+const authentication = require('../../middleWare/authentication')
 
-app.use(accessData)
+app.use(authentication)
 
 app.post('/transactions', (req, res) => {
     const body = req.body

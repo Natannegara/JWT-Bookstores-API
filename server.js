@@ -1,9 +1,5 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-const getTransactions = require('./route/transactions/getTransactions')
-const addTransactions = require('./route/transactions/addTransactions')
-const editTransactions = require('./route/transactions/editTransactions')
-const delTransactions = require('./route/transactions/delTransactions')
 
 const getBooks = require('./route/books/getBooks')
 const addBooks = require('./route/books/addBooks')
@@ -20,16 +16,16 @@ const addBookPublishers = require('./route/bookPublishers/addBookPublishers')
 const editBookPublishers = require('./route/bookPublishers/editBookPublishers')
 const delBookPublishers = require('./route/bookPublishers/delBookPublishers')
 
+const getTransactions = require('./route/transactions/getTransactions')
+const addTransactions = require('./route/transactions/addTransactions')
+const editTransactions = require('./route/transactions/editTransactions')
+const delTransactions = require('./route/transactions/delTransactions')
+
 const register = require('./register')
 const login = require('./login')
 
 const app = express()
 app.use(bodyParser.json())
-
-app.use(getTransactions)
-app.use(addTransactions)
-app.use(editTransactions)
-app.use(delTransactions)
 
 app.use(getBooks)
 app.use(addBooks)
@@ -48,6 +44,11 @@ app.use(delBookPublishers)
 
 app.use(register)
 app.use(login)
+
+app.use(getTransactions)
+app.use(addTransactions)
+app.use(editTransactions)
+app.use(delTransactions)
 
 
 const port = 3000

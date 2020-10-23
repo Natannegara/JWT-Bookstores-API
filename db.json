@@ -1,6 +1,13 @@
 {
   "books": [],
-  "bookStores": [],
+  "bookStores": [
+    {
+      "nama": "erlangga",
+      "id": "1 store",
+      "bookPublisherId": "1 publisher",
+      "address": "jalan"
+    }
+  ],
   "bookPublishers": [],
   "transactions": [
     {
